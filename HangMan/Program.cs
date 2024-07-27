@@ -1,3 +1,3 @@
 ﻿using HangMan;
 
-Game.StartGame();
+HangManGame.StartGame();

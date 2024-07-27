@@ -1,45 +1,32 @@
 ﻿namespace HangMan
 {
-    public static class GuessWord
+    public class GuessWord
     {
-        private const string _pathToTextFile = "dictionary.txt";
-        private static string? _hiddenWord = String.Empty;
-        public static string? VisibleWord { get; private set; } = String.Empty;
-
-        // Initialization here for better randomness
-        private static Random rnd = new();
-
-        public static bool IsWordSolved
+        public string? HiddenWord { get; private set; }
+        public string? VisibleWord { get; private set; }
+        public bool IsWordSolved
         {
-            get
-            {
-                return VisibleWord == _hiddenWord;
-            }
+            get => VisibleWord == HiddenWord;
         }
 
-        static GuessWord()
+        public GuessWord()
         {
-
+            HiddenWord = WordGenerator.GetRandomWord();
+            VisibleWord = new string('_', HiddenWord.Length);
         }
 
-        public static void Reload()
+        public bool HasLetter(char letter)
         {
-            GenerateHiddenWord();
-            GenerateVisibeWord();
+            return HiddenWord.Contains(letter);
         }
 
-        public static bool HasLetter(char letter)
-        {
-            return _hiddenWord.Contains(letter);
-        }
-
-        public static void OpenLettersInHiddenWord(char letter)
+        public void OpenLetterInHiddenWord(char letter)
         {
             char[] visibleWordCharArr = VisibleWord.ToCharArray();
 
-            for (int i = 0; i < _hiddenWord.Length; i++)
+            for (int i = 0; i < HiddenWord.Length; i++)
             {
-                if (_hiddenWord[i] == letter)
+                if (HiddenWord[i] == letter)
                 {
                     visibleWordCharArr[i] = letter;
                 }
@@ -47,31 +34,9 @@
             VisibleWord = new string(visibleWordCharArr);
         }
 
-        private static void GenerateHiddenWord()
+        public void PrintVisibleWord()
         {
-            int countLinesInFile = File.ReadLines(_pathToTextFile).Count();
-
-            int minIndex = 0;
-            int maxIndex = countLinesInFile - 1;
-
-            int hiddenWordIndex = rnd.Next(minIndex, maxIndex);
-
-            _hiddenWord = File.ReadLines(_pathToTextFile)
-            .ElementAtOrDefault(hiddenWordIndex);
+            Console.WriteLine($"\nЗагаданное слово: {VisibleWord} ");
         }
-
-        private static void GenerateVisibeWord()
-        {
-            VisibleWord = new string('_', _hiddenWord.Length);
-        }
-
-        public static string GetHiddenWord()
-        {
-            if (Player.IsPlayerLose || IsWordSolved)
-                return _hiddenWord;
-            else
-                return "Ошибка (Для отображения загаданного слова Вам необходимо проиграть/выиграть)";
-        }
-
     }
 }
