@@ -63,7 +63,6 @@
             "      |  ",
             "========="],
         };
-        public Gallow() { }
         public void DisplayGallow(int countOfMistakes)
         {         
             foreach (var line in _stages[countOfMistakes])

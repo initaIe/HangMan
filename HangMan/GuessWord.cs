@@ -2,7 +2,7 @@
 {
     public class GuessWord
     {
-        public string? HiddenWord { get; private set; }
+        public string? HiddenWord { get; private set; } = WordGenerator.GetRandomWord();
         public string? VisibleWord { get; private set; }
         public bool IsWordSolved
         {
@@ -11,7 +11,6 @@
 
         public GuessWord()
         {
-            HiddenWord = WordGenerator.GetRandomWord();
             VisibleWord = new string('_', HiddenWord.Length);
         }
 

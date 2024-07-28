@@ -2,18 +2,10 @@
 {
     public class HangManGame
     {
-        private Player _player;
-        private GuessWord _word;
-        private HandleInput _handleInput;
-        private Gallow _gallow;
-
-        private HangManGame()
-        {
-            _player = new();
-            _word = new();
-            _handleInput = new();
-            _gallow = new();
-        }
+        private Player _player = new();
+        private GuessWord _word = new();
+        private InputHandler _inputHandler = new();
+        private Gallow _gallow = new();
 
         private Status GameStatus
         {
@@ -48,7 +40,7 @@
                     newGame._gallow.DisplayGallow(newGame._player.Mistakes);
                     newGame._player.ShowUsedLetters();
                     newGame._word.PrintVisibleWord();
-                    newGame._handleInput.GetUserInput(out char letter);
+                    newGame._inputHandler.GetUserInput(out char letter);
 
                     if (!newGame._player.IsUsedLetter(letter))
                     {

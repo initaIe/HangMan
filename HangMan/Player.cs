@@ -3,17 +3,11 @@
     public class Player
     {
         private const int _maxMistakes = 5;
-        public int Mistakes { get; private set; }
-        private List<char> _usedLetters;
+        public int Mistakes { get; private set; } = 0;
+        private List<char> _usedLetters = new();
         public bool IsPlayerLose
         {
-            get => Mistakes > _maxMistakes;            
-        }
-
-        public Player()
-        {
-            Mistakes = 0;
-            _usedLetters = new();
+            get => Mistakes > _maxMistakes;
         }
 
         public void AddMistake()
