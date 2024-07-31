@@ -11,4 +11,9 @@
     <PackageReference Include="Steeltoe.Common.Http" Version="3.2.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Validators\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>
