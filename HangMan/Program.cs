@@ -1,3 +1,9 @@
-﻿using HangMan;
+﻿using HangMan.Common;
+using HangMan.Common.WordGeneration.API;
+using HangMan.Common.WordGeneration.FromFile;
 
-HangManGame.StartGame();
+while (true)
+{
+    HangManGame newHangManGame = new(new RandomWordApiWordGenerator());
+    newHangManGame.Start();
+}

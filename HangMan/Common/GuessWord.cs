@@ -1,17 +1,14 @@
-﻿namespace HangMan
+﻿namespace HangMan.Common
 {
     public class GuessWord
-    {
-        public string? HiddenWord { get; private set; } = WordGenerator.GetRandomWord();
-        public string? VisibleWord { get; private set; }
-        public bool IsWordSolved
+    {       
+        public string HiddenWord { get; private set; }
+        public string VisibleWord { get; private set; }
+        public bool IsWordSolved => VisibleWord == HiddenWord;
+        public GuessWord(string hiddenWord)
         {
-            get => VisibleWord == HiddenWord;
-        }
-
-        public GuessWord()
-        {
-            VisibleWord = new string('_', HiddenWord.Length);
+            HiddenWord = hiddenWord;
+            VisibleWord = new string('_', hiddenWord.Length);
         }
 
         public bool HasLetter(char letter)

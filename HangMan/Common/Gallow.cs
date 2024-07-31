@@ -1,5 +1,5 @@
-﻿namespace HangMan
-{    
+﻿namespace HangMan.Common
+{
     public class Gallow
     {
         private string[][] _stages =
@@ -64,7 +64,7 @@
             "========="],
         };
         public void DisplayGallow(int countOfMistakes)
-        {         
+        {
             foreach (var line in _stages[countOfMistakes])
             {
                 Console.WriteLine(line);

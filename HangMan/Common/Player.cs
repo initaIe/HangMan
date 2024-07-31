@@ -1,4 +1,4 @@
-﻿namespace HangMan
+﻿namespace HangMan.Common
 {
     public class Player
     {
