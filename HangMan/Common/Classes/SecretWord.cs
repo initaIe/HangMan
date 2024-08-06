@@ -2,14 +2,12 @@
 
 namespace HangMan.Common.Classes
 {
-    public class SecretWord : ISecretWord
+    public class SecretWord : IWord
     {
         public string Word { get; private set; }
         public SecretWord(string word)
         {
             Word = word;
         }
-
-        public bool HasLetter(char letter) => Word.Contains(letter);        
     }
 }

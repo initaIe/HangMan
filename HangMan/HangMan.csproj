@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Validators\" />
     <Folder Include="Resources\" />
   </ItemGroup>
 
