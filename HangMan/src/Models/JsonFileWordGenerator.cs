@@ -5,14 +5,14 @@ namespace HangMan.src.Models
 {
     public class JsonFileWordGenerator : FileWordGeneratorBase
     {
-        protected readonly IDeserializer _deserializer;
+        protected readonly IDeserializer<string[]> _deserializer;
         protected string[] _words;
 
-        public JsonFileWordGenerator(IDeserializer deserializer, string fileName = "dictionary.json")
-            : base(fileName)
+        public JsonFileWordGenerator(IDeserializer<string[]> deserializer, ITextFormatFileReader textFormatFileReader,
+            string fileName = "dictionary.json") : base(textFormatFileReader, fileName)
         {
             _deserializer = deserializer;
-            string json = File.ReadAllText(_fileName);
+            string json = _textFormatFileReader.ReadFile(_fileName);
             _words = _deserializer.Deserialize(json);
         }
 

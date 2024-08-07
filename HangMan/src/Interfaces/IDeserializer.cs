@@ -1,7 +1,7 @@
 ﻿namespace HangMan.src.Interfaces
 {
-    public interface IDeserializer
+    public interface IDeserializer<T>
     {
-        string[] Deserialize(string jsonString);
+        T Deserialize(string data);
     }
 }
