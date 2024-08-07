@@ -1,6 +1,5 @@
 ﻿using HangMan.src.BaseModels;
 using HangMan.src.Interfaces;
-using System.Text.Json;
 
 namespace HangMan.src.Models
 {

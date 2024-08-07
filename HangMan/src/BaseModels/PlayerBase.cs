@@ -3,7 +3,7 @@
 namespace HangMan.src.BaseModels
 {
     public abstract class PlayerBase(IUsedLetterTracker usedLetterTracker,
-        IMistakeTracker mistakeTracker): IPlayer
+        IMistakeTracker mistakeTracker) : IPlayer
     {
         protected const int _maxMistakes = 5;
         protected readonly IUsedLetterTracker _usedLetterTracker = usedLetterTracker;

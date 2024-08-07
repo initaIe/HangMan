@@ -1,5 +1,4 @@
 ﻿using HangMan.src.Interfaces;
-using Steeltoe.Common.Http;
 
 namespace HangMan.src.BaseModels
 {

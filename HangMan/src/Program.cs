@@ -1,7 +1,4 @@
-﻿using HangMan.src.Interfaces;
-using HangMan.src.Models;
-using HangMan.src.Providers.Implementations;
-using HangMan.src.Services.Implementations;
+﻿using HangMan.src.Models;
 
 //var word = new SecretWord("Медведь");
 //var wordProvider = new WordProvider(word);
