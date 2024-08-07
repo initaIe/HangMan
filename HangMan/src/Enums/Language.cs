@@ -1,4 +1,4 @@
-﻿namespace HangMan.Common.Enums
+﻿namespace HangMan.src.Enums
 {
     public enum Language
     {

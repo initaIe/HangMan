@@ -1,8 +1,7 @@
-﻿namespace HangMan.Common.Interfaces
+﻿namespace HangMan.src.Interfaces
 {
     public interface IMistakeTracker
     {
         int Mistakes { get; }
-        void Increment();
     }
 }

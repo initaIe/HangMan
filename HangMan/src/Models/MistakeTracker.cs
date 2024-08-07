@@ -1,11 +1,11 @@
-﻿using HangMan.Common.Interfaces;
+﻿using HangMan.src.Interfaces;
 
-namespace HangMan.Common.Classes
+namespace HangMan.src.Models
 {
     public class MistakeTracker : IMistakeTracker
     {
         public int Mistakes { get; private set; } = 0;
 
-        public void Increment() => Mistakes++;
+        public void AddMistake() => Mistakes++;
     }
 }

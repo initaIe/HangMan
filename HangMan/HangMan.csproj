@@ -13,6 +13,10 @@
 
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="src\Providers\Implementations\" />
+    <Folder Include="src\Providers\Interfaces\" />
+    <Folder Include="src\Utilities\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 
 </Project>
