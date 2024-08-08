@@ -1,7 +1,7 @@
 ﻿using HangMan.src.BaseModels;
 using HangMan.src.Interfaces;
 
-namespace HangMan.src.Models
+namespace HangMan.src.DerivedClasses
 {
     public class Player(IUsedLetterTracker usedLetterTracker, IMistakeTracker mistakeTracker)
         : PlayerBase(usedLetterTracker, mistakeTracker)

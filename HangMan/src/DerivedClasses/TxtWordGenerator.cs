@@ -1,12 +1,12 @@
 ﻿using HangMan.src.BaseModels;
 using HangMan.src.Interfaces;
 
-namespace HangMan.src.Models
+namespace HangMan.src.DerivedClasses
 {
     public class TxtWordGenerator(ITextFormatFileReader textFormatFileReader,
         string fileName = "dictionary.txt") : FileWordGeneratorBase(textFormatFileReader, fileName)
     {
-        protected override int GetCountOfLines()
+        protected private override int GetCountOfLines()
         {
             return _textFormatFileReader.ReadFileLines(_fileName).Count();
         }

@@ -1,12 +1,12 @@
 ﻿using HangMan.src.BaseModels;
 using HangMan.src.Interfaces;
 
-namespace HangMan.src.Models
+namespace HangMan.src.DerivedClasses
 {
     public class JsonFileWordGenerator : FileWordGeneratorBase
     {
-        protected readonly IDeserializer<string[]> _deserializer;
-        protected string[] _words;
+        protected private readonly IDeserializer<string[]> _deserializer;
+        protected private string[] _words;
 
         public JsonFileWordGenerator(IDeserializer<string[]> deserializer, ITextFormatFileReader textFormatFileReader,
             string fileName = "dictionary.json") : base(textFormatFileReader, fileName)
@@ -24,7 +24,7 @@ namespace HangMan.src.Models
             return _words[randomIndex];
         }
 
-        protected override int GetCountOfLines()
+        protected private override int GetCountOfLines()
         {
             return _words.Length;
         }
