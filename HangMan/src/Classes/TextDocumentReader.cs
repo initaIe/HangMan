@@ -2,7 +2,7 @@
 
 namespace HangMan.src.Models
 {
-    public class TextFormatFileReader : ITextFormatFileReader
+    public class TextDocumentReader : ITextDocumentReader
     {
         public string[] ReadAllFileLines(string filePath)
         {

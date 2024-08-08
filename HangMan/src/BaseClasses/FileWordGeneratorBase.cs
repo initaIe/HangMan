@@ -3,9 +3,9 @@
 namespace HangMan.src.BaseModels
 {
     public abstract class FileWordGeneratorBase
-        (ITextFormatFileReader textFormatFileReader, string fileName) : IWordGenerator
+        (ITextDocumentReader textFormatFileReader, string fileName) : IWordGenerator
     {
-        protected private readonly ITextFormatFileReader _textFormatFileReader = textFormatFileReader;
+        protected private readonly ITextDocumentReader _textFormatFileReader = textFormatFileReader;
         protected private string _fileName = fileName;
         protected private Random _random = new();
 

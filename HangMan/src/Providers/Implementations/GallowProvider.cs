@@ -5,10 +5,10 @@ using HangMan.src.Providers.Interfaces;
 namespace HangMan.src.Providers.Implementations
 {
     public class GallowProvider
-        (ITextFormatFileReader textFormatFileReader,
+        (ITextDocumentReader textFormatFileReader,
         IDeserializer<GallowModel> deserializer) : IGallowProvider
     {
-        private readonly ITextFormatFileReader _textFormatFileReader = textFormatFileReader;
+        private readonly ITextDocumentReader _textFormatFileReader = textFormatFileReader;
         private readonly IDeserializer<GallowModel> _deserializer = deserializer;
         public GallowModel GetGallows(string filePath)
         {

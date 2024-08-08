@@ -3,7 +3,7 @@ using HangMan.src.Interfaces;
 
 namespace HangMan.src.DerivedClasses
 {
-    public class TxtWordGenerator(ITextFormatFileReader textFormatFileReader,
+    public class TxtWordGenerator(ITextDocumentReader textFormatFileReader,
         string fileName = "dictionary.txt") : FileWordGeneratorBase(textFormatFileReader, fileName)
     {
         protected private override int GetCountOfLines()

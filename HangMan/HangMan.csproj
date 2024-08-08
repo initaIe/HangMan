@@ -8,12 +8,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\gallows.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\gallows.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Steeltoe.Common.Http" Version="3.2.8" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="Tests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\dictionary.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\dictionary.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

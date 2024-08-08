@@ -8,7 +8,7 @@ namespace HangMan.src.DerivedClasses
         protected private readonly IDeserializer<string[]> _deserializer;
         protected private string[] _words;
 
-        public JsonFileWordGenerator(IDeserializer<string[]> deserializer, ITextFormatFileReader textFormatFileReader,
+        public JsonFileWordGenerator(IDeserializer<string[]> deserializer, ITextDocumentReader textFormatFileReader,
             string fileName = "dictionary.json") : base(textFormatFileReader, fileName)
         {
             _deserializer = deserializer;

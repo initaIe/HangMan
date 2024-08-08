@@ -1,6 +1,7 @@
 ﻿namespace HangMan.src.Interfaces
 {
-    public interface ITextFormatFileReader
+    public interface ITextDocumentReader
+
     {
         string ReadFile(string filePath);
         IEnumerable<string> ReadFileLines(string filePath);
